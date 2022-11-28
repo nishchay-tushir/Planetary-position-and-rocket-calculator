@@ -1,0 +1,81 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 19-Aug-2022
+ *      Author: Nishchay Tushir
+ */
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class wdata{
+    public:
+        float airspeed;
+        int weather; //0 is for sunny , 1 is for cloudy , 2 is for rainy;
+        int humidity;
+        float temperature;
+};
+
+class rocket {
+	public :
+	    int name;
+        float mass;
+        float drag;
+        float thrust;
+        float pw;
+
+		void getdetails();
+		void launchcal();
+		void rocketcal();
+};
+
+void rocket::rocketcal(){
+	pw = mass/thrust;
+}
+
+void rocket::getdetails(){
+        cout<<"Enter the code of the rocket: ";
+        cin>>name;
+        cout<<"\nEnter the mass of the rocket: ";
+        cin>>mass;
+        cout<<"\nEnter the drag of the rocket: ";
+        cin>>drag;
+        cout<<"\nEnter the thrust of the rocket: ";
+        cin>>pw;
+}
+
+void launchcal(int  &val){
+        if (val==0){
+            cout<<"its sunny";
+        }
+}
+int main(){
+
+        ifstream myfile;
+        myfile.open("C:\\Users\\Nishchay Tushir\\Desktop\\PProcketproject\\data.txt");
+        if (!myfile) {
+            cerr << "Unable to open file data.txt";
+        exit(1);   // call system to stop
+        }
+        int x,a;
+        wdata today;
+        wdata tom;
+        while (myfile >> x) {
+            for (int i=0; i<1;i++){
+                today.airspeed;
+                today.weather;
+                today.humidity;
+                today.temperature;
+            }
+        }
+        myfile.close();
+        rocket r;
+        
+        launchcal(today.weather);
+
+        return 0;
+}
+
